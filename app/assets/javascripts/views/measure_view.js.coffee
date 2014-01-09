@@ -1,13 +1,18 @@
 class Thorax.Views.Measure extends Thorax.View
   template: JST['measure']
   events:
-    rendered: -> @$("[rel='popover']").popover(content: @$('.popover-tmpl').text())
+    rendered: -> 
+      @$("[rel='popover']").popover(content: @$('.popover-tmpl').text())
+      d3.select(@el).select('.measure-viz').datum(@model.get("population_criteria")).call(@measureViz) 
+      @$('rect').popover()
+
     'click .delete-measure': 'deleteMeasure'
 
   initialize: ->
     populations = @model.get 'populations'
     population = populations.first()
     populationLogicView = new Thorax.Views.PopulationLogic(model: population)
+    @measureViz = Bonnie.viz.measureVisualzation().dataCriteria(@model.get("data_criteria"))
 
     # display layout view when there are multiple populations; otherwise, just show logic view
     if populations.length > 1

@@ -22,6 +22,7 @@
 #= require thorax/thorax
 #= require moment/min/moment.min.js
 #= require jQuery-Knob/js/jquery.knob
+#= require d3/d3
 #
 #= require helpers
 #= require_tree ./templates
