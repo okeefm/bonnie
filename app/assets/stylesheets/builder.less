@@ -140,15 +140,11 @@
   .affix-top {
   }
   .affix {
-    .make-md-column(2);
+    .make-md-column(1.6);
     padding-left: 0;
-    padding-right: @grid-gutter-width + @time-bar-width;
+    padding-right: 2*@grid-gutter-width;
     position: fixed;
     top: 0;
-    @offset: @grid-gutter-width / 2 + @time-bar-width;
-    margin-left: -@offset;
-    padding-right: (@grid-gutter-width / 2); // leave out @time-bar-width to account for parent's border-right
-
   }
   .affix-bottom {
     position: absolute;
