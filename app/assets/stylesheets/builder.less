@@ -136,13 +136,19 @@
     color: white;
     padding-left: @grid-gutter-width;
   }
-  
+
   .affix-top {
   }
   .affix {
     .make-md-column(2);
+    padding-left: 0;
+    padding-right: @grid-gutter-width + @time-bar-width;
     position: fixed;
-    top: 10px;
+    top: 0;
+    @offset: @grid-gutter-width / 2 + @time-bar-width;
+    margin-left: -@offset;
+    padding-right: (@grid-gutter-width / 2); // leave out @time-bar-width to account for parent's border-right
+
   }
   .affix-bottom {
     position: absolute;
