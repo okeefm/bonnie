@@ -58,7 +58,7 @@ class Thorax.Views.PatientBuilder extends Thorax.Views.BonnieView
       @materialize()
       switch @$(e.target).attr('name') #jquery with focusable next for each select elements change
         when 'payer'
-          @$('.date-picker').focus()
+          @$('input[name="birthdate"]').focus()
         when 'race'
           @$('select[name="gender"]').focus()
         when 'gender'
